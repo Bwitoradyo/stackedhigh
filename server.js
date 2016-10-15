@@ -10,6 +10,11 @@ var app = express();
 //View engine
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
+//add html engine
+app.engine('html', require('ejs').renderFile);
+
+//set the static location front end
+app.use(express.static(path.join(__dirname, 'client')));
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:false}));
