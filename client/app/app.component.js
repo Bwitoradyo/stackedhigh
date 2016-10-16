@@ -9,13 +9,16 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
+var todo_service_1 = require("./services/todo.service");
 var AppComponent = (function () {
     function AppComponent() {
     }
     AppComponent = __decorate([
         core_1.Component({
+            moduleId: module.id,
             selector: 'my-app',
-            template: '<h1>Stackedhigh!!!</h1>'
+            templateUrl: 'app.component.html',
+            providers: [todo_service_1.TodoService]
         }), 
         __metadata('design:paramtypes', [])
     ], AppComponent);
